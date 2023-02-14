@@ -253,6 +253,16 @@ class Intercom {
     return IntercomFlutterPlatform.instance.displayArticle(articleId);
   }
 
+  /// To display a filtered list of Collection, pass in a list of [collectionId]
+  /// from your Intercom workspace.
+  ///
+  /// A collection must be 'live' to use used in this feature.
+  /// If it is in a draft or paused state,
+  /// end-users will see an error if the app tries to open the content.
+  Future<void> displayCollections(List<String> collectionIds) async {
+    return IntercomFlutterPlatform.instance.displayCollections(collectionIds);
+  }
+
   /// To display a Carousel, pass in a [carouselId] from your Intercom workspace.
   ///
   /// A carousel must be ‘live’ to be used in this feature.

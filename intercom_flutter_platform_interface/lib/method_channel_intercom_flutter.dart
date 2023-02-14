@@ -222,6 +222,12 @@ class MethodChannelIntercomFlutter extends IntercomFlutterPlatform {
   }
 
   @override
+  Future<void> displayCollections(List<String> collectionIds) async {
+    await _channel
+        .invokeMethod('displayCollections', {'collectionIds': collectionIds});
+  }
+
+  @override
   Future<void> displayCarousel(String carouselId) async {
     await _channel.invokeMethod('displayCarousel', {'carouselId': carouselId});
   }

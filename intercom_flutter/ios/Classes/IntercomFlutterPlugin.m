@@ -186,6 +186,12 @@ id unread;
             [Intercom presentContent:[IntercomContent articleWithId:articleId]];
             result(@"displaying article");
         }
+    } else if ([@"displayCollections" isEqualToString:call.method]) {
+        NSArray *collectionIds = call.arguments[@"collectionIds"];
+        if(collectionIds != nil && [collectionIds count] > 0) {
+            [Intercom presentContent:[IntercomContent helpCenterCollectionsWithIds:collectionIds]];
+            result(@"displaying collections");
+        }
     } else if([@"displayCarousel" isEqualToString:call.method]) {
         NSString *carouselId = call.arguments[@"carouselId"];
         if(carouselId != (id)[NSNull null] && carouselId != nil) {

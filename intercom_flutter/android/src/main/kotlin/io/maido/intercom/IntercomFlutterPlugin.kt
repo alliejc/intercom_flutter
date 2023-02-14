@@ -223,6 +223,13 @@ class IntercomFlutterPlugin : FlutterPlugin, MethodCallHandler, EventChannel.Str
           result.success("displaying article $articleId")
         }
       }
+      "displayCollections" -> {
+        val collectionIds = call.argument<List<String>>("collectionIds")
+        if (collectionIds != null && collectionIds.isNotEmpty()) {
+          Intercom.client().presentContent(IntercomContent.HelpCenterCollections(collectionIds))
+          result.success("displaying collections $collectionIds")
+        }
+      }
       "displayCarousel" -> {
         val carouselId = call.argument<String>("carouselId")
         if (carouselId != null) {

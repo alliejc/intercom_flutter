@@ -1,5 +1,10 @@
 # Changelog
 
+## 9.6.3
+
+* Bump Intercom Android SDK version to [18.9.6](https://github.com/intercom/intercom-android/releases/tag/18.9.6)
+* Bump Intercom iOS SDK version to [19.8.4](https://github.com/intercom/intercom-ios/releases/tag/19.8.4)
+
 ## 9.6.2
 
 * Removed deprecated `handlePushMessage` API (removed from native Intercom SDK)
